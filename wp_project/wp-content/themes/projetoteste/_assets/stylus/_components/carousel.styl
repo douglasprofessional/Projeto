@@ -1,0 +1,389 @@
+// HOME BANNER //
+
+.owl-banner{
+
+    &__item{
+
+        &-title{
+            font-size: 3.6rem
+            font-weight: bold
+            color: white
+            line-height: 40px
+            text-transform uppercase
+
+            +below('tablet'){
+                font-size: 3rem
+            }
+
+            +below('mobile'){
+                font-size: 2.5rem
+                text-align center
+                line-height: 30px
+            }
+        }
+    }
+}
+
+
+// PARTINERS //
+
+.owl-partners{
+    
+    .owl-stage{
+        display: flex
+        align-items: center
+
+        .item{
+
+            img{
+                display block
+                width: initial
+                height: 70px
+                margin: 0 auto
+                filter: grayscale(100%)
+
+                +below('tablet'){
+                    height: 50px
+                }
+
+                +below('mobile'){
+                    height: 30px
+                }
+            }
+        }
+    }
+}
+
+
+// PILLAR //
+
+.owl-pillar{
+    background: $gray0
+    padding: 100px 100px 255px
+
+    +below('small-tablet'){
+        padding: 60px
+        height: 100vh
+    }
+
+    +below('mobile'){
+        padding: 35px
+    }
+
+    +below(450px){
+        padding: 20px 20px 0
+    }
+
+    &__item{
+
+        &-title{
+            font-size: 3.6rem
+            font-weight: bold
+            color: $projetotesteGreen
+
+            +below('tablet'){
+                font-size: 3rem
+            }
+
+            +below('mobile'){
+                font-size: 2.5rem
+            }
+        }
+
+        &-description{
+            font-size: 3.6rem
+            font-weight: 300
+            color: white
+            margin-bottom: 30px
+
+            +below('tablet'){
+                font-size: 3rem
+            }
+
+            +below('mobile'){
+                font-size: 2.5rem
+            }
+        }
+        
+        &-content{
+            font-size: 1.4rem
+            color: white !important
+            line-height: 25px
+
+            & + div {
+                margin-top: 20px
+            }
+
+            a{
+                color: white !important
+                text-decoration: none
+
+                &:hover{
+                    text-decoration: underline 
+                }
+            }
+
+            span{
+                font-weight: 700
+                color: $projetotesteGreen !important
+                display: inline-block
+                margin-right: 8px
+            }
+
+            ol{
+                // padding-left: 3.2%
+                padding-left: 2.5%
+                // padding-left: 4%
+                // padding-left: revert
+                list-style: none
+                counter-reset: li
+
+                > li{
+                    counter-increment: li
+
+                    &::before {
+                        content: counter(li)
+                        color: $projetotesteGreen
+                        display: inline-block
+                        width: 1em
+                        margin-left: -22px
+                        margin-right: 12px
+                        text-align: right
+                        direction: rtl
+                    }
+                }
+            }
+            ul{
+                list-style: none
+
+                > li {
+                    &:before {
+                        content: ""
+                        width: 7px
+                        height: 7px
+                        background-color: $projetotesteGreen
+                        float: left
+                        margin: 9px 14px 0 0
+                        border-radius: 50%
+                    }
+                }
+            }
+        }
+    }
+}
+// Navegação do carrossel de pilares
+.navigation-pillar{
+    background: $gray0
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    margin: 0 10px 10px
+    padding: 0 100px 60px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 1
+
+    +below('small-tablet'){
+        position: fixed
+        padding: 20px 40px
+        justify-content: center
+        margin: 0;
+    }
+
+    +below('mobile'){
+        padding: 40px
+        justify-content: space-between
+    }
+
+    +below(450px){
+        padding: 20px
+    }
+
+    a {
+        position: relative
+        cursor: pointer
+        padding: 3px 3px
+        transition: .2s ease-in-out
+
+        +below(450px){
+            zoom: .8;
+        }
+
+        +below(330px){
+            zoom: .75;
+        }
+
+        & + a {
+            margin-left: 30px
+
+            +below('mobile'){
+                margin: 0
+            }
+        }
+
+        .navigation-pillar-content{
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            background: black
+            width: 140px
+            height: 140px
+            padding: 5px
+
+            +below('mobile'){
+                width: 110px
+                height: 110px
+            }
+
+            .navigation-pillar-title,
+            .navigation-pillar-description{
+                font-size: 1.6rem
+                color: white
+                text-align: center
+                line-height: 20px
+
+                +below(768px){
+                    font-size: 1.4rem
+                }
+            }
+
+            .navigation-pillar-title{                    
+                font-weight: bold
+            }
+
+            .navigation-pillar-description{
+                font-weight: 300
+
+                +below('mobile'){
+                    display: none
+                }
+            }
+        }
+
+        .navigation-pillar-border{
+            position absolute
+            right: 0
+            bottom: 0
+            left: 0
+            height: 60%
+            display: flex
+            flex-direction: column
+            pointer-events: none
+
+            > p{
+                display: inline-block
+                width: 0
+                margin-left: -2px
+                margin-bottom: 5px
+
+                font-size: 1.4rem
+                font-weight bold
+                color: $gray3
+            }
+            > div{
+                flex: 1
+                z-index: -1
+                background-color: $gray3
+            }
+        }                
+
+        &:hover,
+        &.active{
+
+            .navigation-pillar-content{
+                background: $gray0
+            }
+
+            .navigation-pillar-border{
+                > p{
+                    color: $projetotesteGreen
+                }
+                > div{
+                    background-color: $projetotesteGreen
+                }
+            }
+        }
+    }
+}
+// borda externa ao carrossel, dentro do modal
+.pillar-external-border{
+    position absolute
+    right: 0
+    bottom: 0
+    left: 0
+    height: 50%
+    pointer-events: none
+    border: 10px solid $projetotesteGreen
+    z-index: -1
+
+    +below('small-tablet'){
+        display: none
+    } 
+}
+
+
+// TESTIMONY //
+
+.owl-testimony{
+
+    .owl-stage{
+        display: flex
+        align-items: center
+    }
+
+    .owl-item{
+        filter: grayscale(1)
+        // zoom: .5
+
+        &.center{
+            filter: grayscale(0)
+            // zoom: 1
+
+            .item{
+                zoom: 1
+                padding: 0
+            }
+        }
+
+        .item{
+            zoom: .6
+            padding: 0 80px
+
+            .site-about__testimony-list-text{
+                overflow: hidden
+
+                .quote-end {                
+                    float: right
+                }
+                span{ 
+                    display inline-block
+                    margin: 0 30px
+
+                    font-size: 1.8rem
+                    color: black 
+                    line-height: 22px
+                    text-align: center
+                }
+
+                svg{
+                    display inline-block
+
+                    path{
+                        fill: $projetotesteGreen
+                    }
+                }
+            }
+
+            .site-about__testimony-list-logo{
+                // zoom: .5
+                display: block
+                height: 40px
+                margin: 20px auto 0
+            }
+        }
+    }
+
+}

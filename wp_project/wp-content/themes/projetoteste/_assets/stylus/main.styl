@@ -1,0 +1,26 @@
+flex-version = flex
+support-for-ie = true
+vendor-prefixes = official
+
+rupture.scale =        0        600px       992px       1025px      1200px      1400px      1500px
+//                     └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
+// Slice numbers:           1           2           3           4           5           6
+rupture.scale-names =    'mobile' 'small-tablet' 'tablet'    'desktop'     'hd'    'wrap-break'
+
+@-ms-viewport{
+    width: device-width;
+}
+
+// Jeet Grid System
+@import "../../node_modules/jeet/styl/*.styl";
+
+@import "_settings/*";
+// @import "_tools/*";
+@import "_generic/*";
+@import "_base/*";
+@import "_objects/*";
+@import "_pages/*";
+@import "_components/*";
+// @import "_trumps/*";
+
+#bitnami-banner{ display: none !important; }

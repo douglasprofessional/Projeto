@@ -1,0 +1,96 @@
+.site-404 {
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    &__container{
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width 100%
+        max-width 1440px
+        margin 0 auto
+        padding 0 95px
+
+        +below('small-tablet') {
+            padding 0 20px
+        }
+    }
+
+    &__logo{
+        display: inline-block
+        margin: 0 auto 12px
+        zoom: 1.5
+
+        +below('mobile'){
+            zoom: 1
+        }
+
+        svg{
+            display block
+
+            path.dynamic-fill {
+                fill: black
+            }
+        }
+    }
+
+    &__title,
+    &__subtitle,
+    &__help{
+        color: black
+        text-align: center
+    }
+
+    &__title {
+        font-size: 20rem
+        font-weight: 300
+        margin: 0 auto
+
+        +below('mobile'){
+            font-size: 10rem
+        }
+    }
+
+    &__subtitle{
+        font-size: 3rem
+        margin: 0 auto 5px
+        line-height: 1.2
+
+        +below('mobile'){
+            font-size: 2.2rem
+        }
+    }
+
+    &__help{
+        font-size: 1.6rem
+        margin: 0 auto 50px
+        line-height: 1.4
+    }
+
+    &__options{
+        display: flex
+        justify-content: center
+        align-items: center
+
+        > li {
+            margin: 0 15px
+
+            a{
+                font-size: 2rem
+                font-weight bold
+                color: $projetotesteGreen
+
+                &:hover{
+                    text-decoration: underline 
+                }
+            }
+        }
+    }
+}

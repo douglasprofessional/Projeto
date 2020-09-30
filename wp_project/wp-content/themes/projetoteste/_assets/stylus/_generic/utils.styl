@@ -1,0 +1,53 @@
+.hidden {
+	display none !important
+}
+.visible {
+	display block !important
+}
+.responsive-image {
+	display block
+	max-width 100%
+	height auto
+}
+.bg-image {
+	background-repeat no-repeat
+	background-position center center
+	background-size cover
+}
+.transition {
+	transition all 250ms
+	-webkit-transition all 250ms
+	-moz-transition all 250ms
+	-ms-transition all 250ms
+}
+.link {
+	opacity 1
+	transition opacity 250ms
+
+	&:hover {
+		opacity 0.6
+		transition opacity 250ms
+	}
+}
+.screen-reader-text {
+	display none
+	font-size 0
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color white
+  font-style italic
+  opacity .6
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color white
+  font-style italic
+  opacity .6
+}
+
+::placeholder {
+  color white
+  font-style italic
+  opacity .6
+}

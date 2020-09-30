@@ -1,0 +1,679 @@
+.site-home{
+
+    &__banner{
+        overflow hidden
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 100px 0
+
+        +below('tablet'){
+            padding: 50px 0
+        }
+
+        +below('mobile'){
+            flex-direction: column
+            height: 50vh
+            padding: 10px 0
+        }
+
+        &-background{
+            position absolute
+            top: 28px
+            right: 28px
+            bottom: 28px
+            left: 28px
+            filter: brightness(37%)
+
+            +below('tablet'){
+                top: 10px
+                right: 10px
+                bottom: 10px
+                left: 10px
+            }
+        }
+
+        > .container{
+            overflow: hidden
+            display: flex
+            align-items: center
+            z-index: 2
+
+            +below('mobile'){
+                flex: 1
+            }
+        }
+
+        .navigation-banner{ 
+            margin-right: 150px
+            z-index: 1
+
+            +below('tablet'){
+                margin-right: 80px
+            }
+
+            +below('mobile'){
+                display: none
+            }
+
+            a {
+                position: relative
+                display block
+                cursor: pointer
+                padding: 3px 3px
+                transition: .2s ease-in-out
+
+                & + a {
+                    margin-top: 10px
+                }
+                
+                .navigation-banner-content{
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-direction: column
+                    background: rgba(255,255,255,.3)
+                    width: 120px
+                    height: 120px
+                    padding: 5px
+
+                    +below('mobile'){
+                        width: 110px
+                        height: 110px
+                    }
+
+                    img{
+                        display: block
+                        height: 50%
+                    }
+
+                    .navigation-banner-title,
+                    .navigation-banner-description{
+                        font-size: 1.6rem
+                        color: white
+                        text-align: center
+                        line-height: 20px
+
+                        +below(768px){
+                            font-size: 1.4rem
+                        }
+                    }
+
+                    .navigation-banner-title{                    
+                        font-weight: bold
+                    }
+
+                    .navigation-banner-description{
+                        font-weight: 300
+
+                        +below('mobile'){
+                            display: none
+                        }
+                    }
+                }
+
+                .navigation-banner-border{
+                    display: none
+                }                
+
+                &:hover,
+                &.active{
+
+                    .navigation-banner-content{
+                        background: rgba(0,0,0,.3)
+                    }
+
+                    .navigation-banner-border{
+                        position absolute
+                        right: 0
+                        bottom: 0
+                        left: 0
+                        height: 50%
+                        display: flex
+                        flex-direction: column
+                        pointer-events: none
+
+                        > div{
+                            flex: 1
+                            z-index: -1
+                            // background-color: $projetotesteGreen
+                            border-top: 3px solid rgba(0,0,0,.3)
+                            border-right: 3px solid $projetotesteGreen
+                            border-bottom: 3px solid $projetotesteGreen
+                            border-left: 3px solid $projetotesteGreen
+                        }
+                    }
+                }
+            }
+        }
+        
+        .content-banner{
+            display: flex
+            align-items: center
+            flex: 1
+            overflow: hidden
+
+            +below('tablet'){
+                flex-direction: column
+            }
+
+            +below('mobile'){
+                width: 100%
+            }
+
+            > div{
+                overflow: hidden
+                column(1/2, $cycle: 2, $gutter: .5)
+
+                +below('tablet'){
+                    column(1, $cycle: 1, $gutter: 0)
+                }
+
+                &:first-of-type{
+                    +below('tablet'){
+                        order: 2
+                    }
+                }
+
+                &:last-of-type{
+                    display: flex
+                    justify-content: center
+                    align-items: center
+
+                    +below('tablet'){
+                        display: block
+                        margin-bottom: 30px
+                        order: 1
+                    }
+
+                    img{
+                        display: block
+                        width: 45%
+
+                        +below('tablet'){
+                            width: initial
+                            height: 130px
+                        }
+
+                        +below('mobile'){
+                            height: 80px
+                            margin: 0 auto
+                        }
+                    }
+                }
+            }
+        }
+
+        &-cta{
+            position absolute
+            right: 28px
+            bottom: 56px
+            display: flex
+            align-items: center
+            background: rgba(0,0,0,.4)
+            padding: 15px 35px
+
+            +below('tablet'){
+                right: 10px
+                bottom: 48px
+            }
+
+            +below('mobile'){
+                position relative
+                right: initial
+                bottom: initial
+                padding: 15px
+                margin: 0 10px 0
+            }
+
+            +below(480px){
+                flex-direction: column
+            }
+
+            > p{
+                max-width: 200px
+                margin-right: 25px
+
+                font-size: 1.4rem
+                font-weight: 500
+                color: white
+                line-height: 18px
+
+                +below('mobile'){
+                    max-width: initial 
+                    flex: 1
+                }
+
+                +below(480px){
+                    text-align center
+                    margin-bottom: 10px
+                }
+            }
+
+            > a{
+                display inline-block
+                border-radius: 5px
+                background-color: $projetotesteGreen
+                padding: 10px 35px
+
+                font-size: 1.4rem
+                font-weight: 500
+                color: white
+
+                +below(480px){
+                    width: 100%;
+                    border-radius: 2px
+                    text-align: center
+                }
+            }
+        }
+    }
+
+    &__business{
+        overflow hidden
+        padding: 60px 0
+
+        +below('tablet'){
+            padding-bottom: 40px
+        }
+
+        > .container{
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            +below('tablet'){
+                flex-direction: column
+            }
+
+            > div {
+                // border: 1px solid red
+                column(1/2, $cycle: 2, $gutter: 0)
+
+                +below('tablet'){
+                    column(1, $cycle: 1, $gutter: 0)
+                }
+            }
+        }
+        
+
+        &-mosaic{           
+
+            > ul{
+                // border: 3px dashed green
+                display: flex
+                flex-wrap: wrap
+
+                +below('tablet'){
+                    margin: -5px -10px 20px
+                }
+
+                +below('mobile'){
+                    padding: 0 10px
+                }
+
+                li{
+                    // border: 1px solid blue
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 155px
+                    height: 155px
+                    margin: 10px
+                    padding: 10px
+                    transition: transform .2s ease-in-out
+
+                    font-size: 1.4rem
+                    text-align: center
+                    color: white
+                    line-height: 17px
+
+                    +below('mobile'){
+                        display: block
+                        width: 100%
+                        height: auto
+                        padding: 20px
+                        margin: 0
+
+                        & + li {
+                            margin-top: 5px
+                        }
+                    }
+
+                    strong{
+                        font-weight bold
+                    }
+
+                    &:hover{
+                        background-color: white !important
+                        box-shadow: 0 2px 8px rgba(0,0,0,.3)
+                        transform: scale(1.05)
+                        color: black !important
+
+                        +below('mobile'){
+                            box-shadow: none
+                            transform: scale(1)
+                        }
+                    }
+                }
+            }
+        }
+
+        &-infos{
+            padding-left: 150px
+
+            +below('desktop'){
+                padding-left: 0
+            }
+
+            &-title{
+                // position: relative
+                font-size: 4rem
+                font-weight: bold
+                color: black
+
+                display: inline
+                padding-bottom: 1px
+                border-bottom: solid 5px $projetotesteGreenDark
+                line-height: 60px
+
+                +below('mobile'){
+                    font-size: 2.4rem
+                }
+
+                // &::after {
+                //     content: ''
+                //     position: absolute
+                //     top: 24px
+                //     left: 0
+                //     width: 130px
+                //     height: 15px
+                //     background-color: $projetotesteGreenDark
+                //     z-index: -1
+
+                //     +below('mobile'){
+                //         top: 15px
+                //         height: 10px
+                //     }
+                // }
+            }
+
+            &-description{
+                font-size: 1.8rem
+                color: black
+                line-height: 30px
+                margin: 30px 0
+
+                +below('tablet'){
+                    line-height: 25px
+                    margin: 15px 0
+                }
+            }
+
+            &-contact{
+                display inline-block
+                border-radius: 5px
+                background-color: $projetotesteGreen
+                padding: 15px 40px
+
+                font-size: 1.6rem
+                font-weight: 500
+                color: white
+
+                +below('mobile'){
+                    padding: 15px
+                    width: 100%;
+                    text-align: center
+                }
+            }
+        }
+    }
+
+    &__eprojetoteste{
+        overflow hidden
+        padding: 60px 0
+
+        +below('tablet'){
+            padding-top: 0
+        }
+
+        > .container{
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            +below('tablet'){
+                flex-direction: column
+            }
+
+            > div {
+                
+                &:first-of-type{
+                    order: 1
+                    column(2/5, $cycle: 2, $gutter: 0)
+
+                    +below('tablet'){
+                        order: 2
+                        column(1, $cycle: 1, $gutter: 0)
+                    }
+                }
+                &:last-of-type{
+                    order: 2
+                    column(3/5, $cycle: 2, $gutter: 0)
+
+                    +below('tablet'){
+                        order: 1
+                        column(1, $cycle: 1, $gutter: 0)
+                    }
+                }
+            }
+        }
+
+        &-content{
+
+            &-title{
+                position: relative
+                font-size: 4rem
+                font-weight: bold
+                color: black
+
+                +below('mobile'){
+                    font-size: 2.4rem
+                }
+
+                &::after {
+                    content: ''
+                    position: absolute
+                    top: 24px
+                    left: 0
+                    width: 130px
+                    height: 15px
+                    background-color: $projetotesteGreenDark
+                    z-index: -1
+
+                    +below('mobile'){
+                        top: 15px
+                        height: 10px
+                    }
+                }
+            }
+
+            &-description{
+                font-size: 1.8rem
+                color: black
+                line-height: 30px
+                margin: 30px 0
+
+                +below('tablet'){
+                    line-height: 25px
+                    margin: 15px 0
+                }
+            }
+
+            &-contact{
+                display inline-block
+                border-radius: 5px
+                background-color: $projetotesteGreen
+                padding: 15px 40px
+
+                font-size: 1.6rem
+                font-weight: 500
+                color: white
+
+                +below('mobile'){
+                    padding: 15px
+                    width: 100%;
+                    text-align: center
+                }
+            }
+        }
+
+        &-illustration{
+
+            img{
+                display: block
+                width: 100%
+
+                +below('tablet'){
+                    width: initial
+                    height: 150px
+                    margin: 0 0 15px
+                }
+
+                +below('mobile'){
+                    width: 100%
+                    height: initial
+                    // margin: 0 auto 15px
+                }
+            }
+        }
+    }
+
+    &__partners{
+        overflow hidden
+        padding: 60px 0 130px
+
+        +below('tablet'){
+            padding: 30px 0 65px
+        }
+
+        +below('mobile'){
+            padding-top: 0
+        }
+    }
+
+    &__blog{
+        overflow hidden
+        padding: 120px 0
+
+        +below('tablet'){
+            padding: 60px 0
+        }
+
+        &-list{
+            overflow hidden
+
+            > li{
+                column(1/3, $cycle: 3, $gutter: 2.5)
+
+                +below('small-tablet'){
+                    border-bottom: 1px solid $gray3
+                    padding-bottom: 25px
+                    margin-bottom: 25px
+                    column(1, $cycle: 1, $gutter: 0)
+
+                    &:last-child{
+                        border: 0
+                        padding-bottom: 0
+                        margin-bottom: 0
+                    }
+                }
+
+            }
+            
+            &-thumbnail{
+                width: 100%
+                height: 226px
+
+                +below('small-tablet'){
+                    height: 300px
+                }
+
+                +below(768px){
+                    height: 160px
+                }
+
+                div{
+                    display block
+                    width: inherit
+                    height: inherit
+                    overflow hidden
+
+                    img{
+                        display: block
+                        width: inherit
+                        height: inherit
+                        object-fit: cover
+                    }
+                }
+            }
+
+            &-title{
+                font-size: 1.8rem
+                font-weight: 700
+                color: black
+                line-height: 1.4
+                margin-top: 20px
+            }
+
+            &-body{
+                font-size: 1.4rem
+                font-weight: 300
+                color: black
+                line-height: 1.4
+                margin: 10px 0
+            }
+
+            &-continue{
+                display: inline-block
+                font-size: 1.4rem
+                font-weight: bold
+                color: black
+                line-height: 1.4
+                border-bottom: 3px solid $projetotesteGreen
+            }
+        }
+
+        &-more{
+            margin-top: 70px
+            text-align: center
+
+            +below('tablet'){
+                margin-top: 50px
+            }
+
+            +below('mobile'){
+                margin-top: 30px
+            }
+
+            a{
+                display inline-block
+                border-radius: 5px
+                background-color: $projetotesteGreen
+                padding: 15px 40px
+                margin: 0 auto
+
+                font-size: 1.6rem
+                font-weight: 500
+                color: white
+
+                +below('mobile'){
+                    padding: 15px
+                    width: 100%;
+                    text-align: center
+                }
+            }
+        }
+    }
+}

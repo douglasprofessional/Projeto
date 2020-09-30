@@ -1,0 +1,123 @@
+.site-footer {
+
+    > div {
+        &:first-child{
+            background-color: black
+            padding: 40px 0
+        }
+
+        &:last-child{
+            background-color: white
+        }
+    }
+
+    &__content{
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        +below(850px){
+            flex-direction: column
+        }
+
+        &-top-scroll{
+            display block
+            cursor: pointer
+
+            +below(850px){
+                margin-bottom: 35px
+            }
+
+            +below('mobile'){
+                margin-bottom: 20px
+                height: 50px
+            }
+        }
+
+        &-info{
+            flex-basis: 50%
+            display: flex
+            align-items: center
+            font-size: 1.4rem
+            line-height: 1.4
+            color: white !important
+
+            +below('mobile'){
+                flex-direction: column
+                text-align: center
+            }
+
+            p{ white-space: nowrap }
+
+            > div {
+
+                &:nth-child(1){
+                    border-left: 1px solid white
+                    padding: 5px 45px 5px 20px
+
+                    +below(850px){
+                        border: 0
+                        padding-left: 0
+                    }
+
+                    +below('mobile'){
+                        padding: 0
+                        margin-bottom: 2px
+                    }
+
+                    .site-footer__content-title{
+                        font-weight bold
+                        margin-bottom: 10px
+                    }
+                }
+
+                &:nth-child(2){
+                    flex: 1
+
+                    > div {
+                        margin-top: 10px
+                    }
+
+                    a{
+                        display: inline-block
+
+                        &:nth-child(1){
+                            margin-right: 26px
+                            margin-left: -3px
+                        }
+
+                        &:nth-child(2){
+                            margin-right: 30px
+                        }
+
+                        svg{
+                            display block
+                            .fill-color{
+                                fill: white
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__usabit{
+        display: inline-block
+        float: right
+        margin: 15px 0
+
+        +below('mobile'){
+            width: 100%
+            float: initial
+            margin: 15px auto
+            text-align: center
+        }
+
+        svg{
+            path{
+                fill: black
+            }
+        }
+    }
+}

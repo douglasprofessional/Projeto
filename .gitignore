@@ -1,0 +1,12 @@
+phpmyadmin/
+./node_modules
+./node_modules/
+/node_modules/
+/node_modules
+node_modules
+wp_project/wp-content/themes/usabit/assets/
+wp_project/wp-content/ai1wm-backups/*.wpress
+/ai1wm-backups/*.wpress
+package-lock.json
+.DS_Store
+Thumbs.db

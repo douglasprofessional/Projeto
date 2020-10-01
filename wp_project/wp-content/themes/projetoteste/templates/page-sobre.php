@@ -9,6 +9,7 @@ get_header();
         <div class="container">
             <h1 class="section_sobre__title">Sobre</h1>
             <h2 class="section_sobre__subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit facilis distinctio quidem sint autem sunt, molestias quam possimus, veritatis ipsa numquam dicta itaque. Praesentium consequuntur similique illo eligendi et voluptatum?</h2>
+            <p class="section_sobre__whats">Contato Whatsapp: <?php the_field('whatsapp') ?> </p>
         </div>
     </section>
 

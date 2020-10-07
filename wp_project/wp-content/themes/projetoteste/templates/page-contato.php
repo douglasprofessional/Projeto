@@ -4,6 +4,8 @@
  */
 get_header();
 
+$sobreId = 15;
+
 ?>
     <section clas="section_contato">
         <div class="container">
@@ -12,5 +14,10 @@ get_header();
         </div>
     </section>
 
+    <?php if(get_field('sobre_titulo', $sobreId)) : ?>
+        <h1 class="sobre_titulo">
+            <?php the_field('sobre_titulo', $sobreId); ?>
+        </h1>
+    <?php endif; ?>
 <?php
 get_footer();

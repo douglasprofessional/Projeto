@@ -8,11 +8,16 @@
  *
  * @package projetoteste
  */
-$homeId = 8;
+$homeId = 11;
 
 ?>
         </main>
-        <?php echo 'footer'; ?>
+        
+        <?php if(get_field('footer_titulo', $homeId)) : ?>
+            <h1 class="footer_titulo">
+                <?php the_field('footer_titulo', $homeId); ?>
+            </h1>
+        <?php endif; ?>
 
         <?php wp_footer(); ?>
 

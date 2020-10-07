@@ -9,6 +9,8 @@ get_header();
 
     <?php echo '<h1>Hello Word, <span>Lucas Chaves</span></h1>;' ?>
 
+    <?php echo '<h2>Lorem Ipsum Dolor Sit Amet</h2>;' ?>
+
 <?php if( have_rows('section_home') ) : while( have_rows('section_home') ) : the_row(); ?>
     <section class="section_home">
         <?php if(get_sub_field('section_home__image')) : ?>

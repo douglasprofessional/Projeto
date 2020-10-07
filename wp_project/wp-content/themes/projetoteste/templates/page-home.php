@@ -6,7 +6,8 @@ get_header();
 
 ?>
 
-    <?php echo '<h1>Hello World, Douglas!</h1>'; ?>
+
+    <?php echo '<h1>Hello Word, <span>Lucas Chaves</span></h1>;' ?>
 
 <?php if( have_rows('section_home') ) : while( have_rows('section_home') ) : the_row(); ?>
     <section class="section_home">
